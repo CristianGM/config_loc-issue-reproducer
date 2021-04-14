@@ -1,0 +1,11 @@
+language: java
+jdk: openjdk8
+
+env:
+  - GRADLE_VERSION=6.8.3
+  - GRADLE_VERSION=7.0.0
+
+install: skip
+script:
+  - ./gradlew wrapper --gradle-version=$GRADLE_VERSION
+  - ./gradlew checkstyleMain --scan
